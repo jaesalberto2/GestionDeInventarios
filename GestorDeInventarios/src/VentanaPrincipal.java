@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 
 public class VentanaPrincipal {
   private JScrollPane scroll;
+  private JTextField inventario;
+  private DefaultListModel<String> modeloLista = new DefaultListModel<String>();
+  private JList<String> lista;
     private JTable tabla;
     private DefaultTableModel modelo; 
     private String[] columnas = {"ID", "Nombre", "Cantidad", "Precio", "Descripción"};
@@ -24,6 +27,19 @@ public class VentanaPrincipal {
      panel.setLayout(null);
      panel.setBackground(Color.decode("#1e1e1e"));
 
+
+     lista = new JList<String>(modeloLista);
+
+      scroll = new JScrollPane(lista);
+      scroll.setBounds(177, 34, 1150, 650);
+      scroll.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
+      scroll.setBackground(Color.decode("#B2B2B2"));
+      scroll.setForeground(Color.decode("#656565"));
+      scroll.setBorder(new RoundedBorder(2, Color.decode("#979797"), 0));
+
+     panel.add(scroll);
+
+
      JButton registrar = new JButton("Registrar\n Entrada");
      registrar.setBounds(10, 34, 160, 57);
      registrar.setBackground(Color.decode("#2e2e2e"));
@@ -34,8 +50,11 @@ public class VentanaPrincipal {
      OnClickEventHelper.setOnClickColor(registrar, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(registrar);
      registrar.addActionListener((ActionEvent e) -> {
+      @SuppressWarnings("unused")
       VentanaRegistrarEntrada registro = new VentanaRegistrarEntrada();
-     });
+      
+      modeloLista.addElement(registro.getTexto());
+    });
 
 
 
@@ -49,6 +68,7 @@ public class VentanaPrincipal {
      OnClickEventHelper.setOnClickColor(consulta, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(consulta);
       consulta.addActionListener((ActionEvent e) -> {
+        @SuppressWarnings("unused")
         VentanaConsultar consulta1 = new VentanaConsultar();
       });
 
@@ -79,22 +99,18 @@ public class VentanaPrincipal {
      panel.add(salida);
 
       salida.addActionListener((ActionEvent e) -> {
+        @SuppressWarnings("unused")
         VentanaSalida salida1 = new VentanaSalida();
       });
 
 
 
-     JScrollPane texto = new JScrollPane();
-     texto.setBounds(177, 34, 1150, 650);
-     texto.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
-     texto.setBackground(Color.decode("#B2B2B2"));
-     texto.setForeground(Color.decode("#656565"));
-     texto.setBorder(new RoundedBorder(2, Color.decode("#979797"), 0));
+    
 
-     panel.add(texto);
 
      frame.add(panel);
      frame.setVisible(true);
+     
 
  
       
