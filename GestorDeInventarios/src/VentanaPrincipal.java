@@ -15,7 +15,6 @@ public class VentanaPrincipal {
 
   public VentanaPrincipal(String[] args) {
 
-    BottonListener botones = new BottonListener();
     
 
      JFrame frame = new JFrame("Gestor de Inventarios PTS");
@@ -33,8 +32,11 @@ public class VentanaPrincipal {
      registrar.setBorder(new RoundedBorder(4, Color.decode("#979797"), 1));
      registrar.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(registrar, Color.decode("#232323"), Color.decode("#2e2e2e"));
-     
      panel.add(registrar);
+     registrar.addActionListener((ActionEvent e) -> {
+      VentanaRegistrarEntrada registro = new VentanaRegistrarEntrada();
+     });
+
 
      
       

@@ -3,10 +3,11 @@ import java.awt.Color;
 import helper_classes.*;
 
 public class VentanaRegistrarEntrada {
-  public void VentanaRegistrarEntrada() {
 
-     JFrame frame = new JFrame("My Awesome Window");
-     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  public  VentanaRegistrarEntrada() {
+
+     JFrame frame = new JFrame("Gestor de Inventarios PTS");
+     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
      frame.setSize(469, 254);
      JPanel panel = new JPanel();
      panel.setLayout(null);
