@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.Color;
 import helper_classes.*;
 
-public class VentanaRegistrarEntrada {
-  public void VentanaRegistrarEntrada() {
+public class WindowBuilder {
+  public static void main(String[] args) {
 
      JFrame frame = new JFrame("My Awesome Window");
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

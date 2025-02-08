@@ -14,6 +14,8 @@ public class VentanaPrincipal {
     
 
   public VentanaPrincipal(String[] args) {
+
+    BottonListener botones = new BottonListener();
     
 
      JFrame frame = new JFrame("Gestor de Inventarios PTS");
@@ -31,7 +33,12 @@ public class VentanaPrincipal {
      registrar.setBorder(new RoundedBorder(4, Color.decode("#979797"), 1));
      registrar.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(registrar, Color.decode("#232323"), Color.decode("#2e2e2e"));
+     
      panel.add(registrar);
+
+     
+      
+
 
      JButton consulta = new JButton("Consultar\n Disponibilidad");
      consulta.setBounds(10, 100, 160, 57);
@@ -75,12 +82,11 @@ public class VentanaPrincipal {
      frame.add(panel);
      frame.setVisible(true);
 
-     //action lisenner
-      registrar.addActionListener((ActionEvent e) -> {
-        new VentanaRegistrarEntrada();
-      });
+ 
       
 
 
   }
+
+
 }
