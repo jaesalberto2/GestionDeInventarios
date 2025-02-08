@@ -38,9 +38,6 @@ public class VentanaPrincipal {
      });
 
 
-     
-      
-
 
      JButton consulta = new JButton("Consultar\n Disponibilidad");
      consulta.setBounds(10, 100, 160, 57);
@@ -68,6 +65,9 @@ public class VentanaPrincipal {
      OnClickEventHelper.setOnClickColor(inventario, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(inventario);
 
+
+
+
      JButton salida = new JButton("Registrar\n Salida");
      salida.setBounds(10, 206, 160, 57);
      salida.setBackground(Color.decode("#2e2e2e"));
@@ -77,6 +77,12 @@ public class VentanaPrincipal {
      salida.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(salida, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(salida);
+
+      salida.addActionListener((ActionEvent e) -> {
+        VentanaSalida salida1 = new VentanaSalida();
+      });
+
+
 
      JScrollPane texto = new JScrollPane();
      texto.setBounds(177, 34, 1150, 650);
