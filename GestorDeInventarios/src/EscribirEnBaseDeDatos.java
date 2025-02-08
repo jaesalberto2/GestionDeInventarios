@@ -7,7 +7,6 @@ public class EscribirEnBaseDeDatos {
 
 
     public EscribirEnBaseDeDatos(String in)  {
-     Scanner sc=new Scanner(System.in);
      String ruta="C:/Users/ALBERTO/Documents/herramientas/gestorInventarios/";
      String nombre="GestorInventario.txt";
      //String desc;

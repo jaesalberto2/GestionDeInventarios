@@ -4,16 +4,32 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
 import helper_classes.*;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+//creamos un modelo de lista para la lista de inventario global
+
 
 
 public class VentanaPrincipal {
+  public static DefaultListModel<String> modeloLista = new DefaultListModel<String>();
+
   private JScrollPane scroll;
   private JTextField inventario;
-  private DefaultListModel<String> modeloLista = new DefaultListModel<String>();
   private JList<String> lista;
     private JTable tabla;
     private DefaultTableModel modelo; 
     private String[] columnas = {"ID", "Nombre", "Cantidad", "Precio", "Descripción"};
+
+     String ruta="C:/Users/ALBERTO/Documents/herramientas/gestorInventarios/";
+     String nombre="GestorInventario.txt";
+     //String desc;
+
+
+
     
 
   public VentanaPrincipal(String[] args) {
@@ -33,7 +49,20 @@ public class VentanaPrincipal {
       scroll = new JScrollPane(lista);
       scroll.setBounds(177, 34, 1150, 650);
       scroll.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
-      scroll.setBackground(Color.decode("#B2B2B2"));
+     File archivo=new File(ruta+nombre); 
+         try (FileReader fr = new FileReader(archivo);
+              BufferedReader br = new BufferedReader(fr);
+              BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true))) {
+
+            String line;
+            while((line = br.readLine()) != null){
+                modeloLista.addElement(line);
+            }
+         } catch (NumberFormatException | IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+         }
+
       scroll.setForeground(Color.decode("#656565"));
       scroll.setBorder(new RoundedBorder(2, Color.decode("#979797"), 0));
 
@@ -53,7 +82,8 @@ public class VentanaPrincipal {
       @SuppressWarnings("unused")
       VentanaRegistrarEntrada registro = new VentanaRegistrarEntrada();
       
-      modeloLista.addElement(registro.getTexto());
+
+      
     });
 
 
@@ -70,20 +100,36 @@ public class VentanaPrincipal {
       consulta.addActionListener((ActionEvent e) -> {
         @SuppressWarnings("unused")
         VentanaConsultar consulta1 = new VentanaConsultar();
+        
       });
 
      
 
 
-     JButton inventario = new JButton("Inventario");
-     inventario.setBounds(10, 168, 160, 28);
-     inventario.setBackground(Color.decode("#2e2e2e"));
-     inventario.setForeground(Color.decode("#D9D9D9"));
-     inventario.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
-     inventario.setBorder(new RoundedBorder(4, Color.decode("#979797"), 1));
-     inventario.setFocusPainted(false);
-     OnClickEventHelper.setOnClickColor(inventario, Color.decode("#232323"), Color.decode("#2e2e2e"));
-     panel.add(inventario);
+     JButton actualizar = new JButton("Actualizar");
+     actualizar.setBounds(10, 168, 160, 28);
+     actualizar.setBackground(Color.decode("#2e2e2e"));
+     actualizar.setForeground(Color.decode("#D9D9D9"));
+     actualizar.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
+     actualizar.setBorder(new RoundedBorder(4, Color.decode("#979797"), 1));
+     actualizar.setFocusPainted(false);
+     OnClickEventHelper.setOnClickColor(actualizar, Color.decode("#232323"), Color.decode("#2e2e2e"));
+     panel.add(actualizar);
+      actualizar.addActionListener((ActionEvent e) -> {
+          modeloLista.clear();
+          try (FileReader fr = new FileReader(archivo);
+                BufferedReader br = new BufferedReader(fr);
+                BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true))) {
+  
+              String line;
+              while((line = br.readLine()) != null){
+                  modeloLista.addElement(line);
+              }
+          } catch (NumberFormatException | IOException e1) {
+              // TODO Auto-generated catch block
+              e1.printStackTrace();
+          }
+        });
 
 
 

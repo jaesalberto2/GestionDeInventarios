@@ -40,9 +40,9 @@ public class VentanaRegistrarEntrada {
      panel.add(Registrar);
 
      Registrar.addActionListener((ActionEvent e) -> {
-      texto= ( texto + "\n" + element2.getText());
+      texto= ( element2.getText());
       EscribirEnBaseDeDatos escribir = new EscribirEnBaseDeDatos(texto);
-
+      
       JOptionPane.showMessageDialog(null, "Se ha registrado la entrada de material con éxito");
       element2.setText("");
  
