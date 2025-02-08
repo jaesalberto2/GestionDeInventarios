@@ -1,10 +1,15 @@
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+
 import helper_classes.*;
 
 public class VentanaSalida {
+  String ruta="";
+  String nombre="GestorInventario.txt";
 
   public  VentanaSalida() {
+
 
      JFrame frame = new JFrame("Registrar Salida de Material");
      frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -23,6 +28,9 @@ public class VentanaSalida {
      OnClickEventHelper.setOnClickColor(Registrar, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(Registrar);
 
+     
+
+
      JTextField element2 = new JTextField("");
      element2.setBounds(35, 100, 400, 21);
      element2.setFont(CustomFontLoader.loadFont("./resources/fonts/Lato.ttf", 14));
@@ -32,8 +40,18 @@ public class VentanaSalida {
      OnFocusEventHelper.setOnFocusText(element2, "Your Input!", Color.decode("#353535"),   Color.decode("#656565"));
      panel.add(element2);
 
+     Registrar.addActionListener((ActionEvent e) -> {
+      String texto= ( element2.getText());
+
+      EliminarDeBaseDeDatos eliminar = new EliminarDeBaseDeDatos(texto);
+
+      JOptionPane.showMessageDialog(null, "Se ha registrado la salida de material con éxito");
+      element2.setText("");
+    });
+
      frame.add(panel);
      frame.setVisible(true);
+   
 
   }
 }

@@ -1,10 +1,20 @@
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.io.*;
+
 import helper_classes.*;
 
 public class VentanaConsultar {
+  String ruta="";
+  String nombre="GestorInventario.txt";
+   String nombre2="GestorInventarioSalidas.txt";
+
 
   public  VentanaConsultar() {
+
+    File archivo=new File(ruta+nombre);
+    File archivo2=new File(ruta+nombre2);
 
      JFrame frame = new JFrame("Consultar Disponibilidad");
      frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -34,6 +44,50 @@ public class VentanaConsultar {
 
      frame.add(panel);
      frame.setVisible(true);
+
+     //buscar en la base de datos
+      Registrar.addActionListener((ActionEvent e) -> {
+        String texto= ( element2.getText());
+        if (archivo.exists()) {
+          try {
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+            String linea;
+            boolean encontrado = false;
+            while((linea = br.readLine()) != null){
+              if(linea.equals(texto)){
+                JOptionPane.showMessageDialog(null,"La MAP se encuentra en Inventario");
+                encontrado = true;
+                return;
+              }
+            }
+            //buscar en la base de datos de salidas
+            if (archivo2.exists()) {
+              FileReader fr2 = new FileReader(archivo2);
+              BufferedReader br2 = new BufferedReader(fr2);
+              String linea2;
+              while((linea2 = br2.readLine()) != null){
+              if(linea2.equals(texto)){
+                JOptionPane.showMessageDialog(null,"La MAP se encuentra en Salidas");
+                encontrado = true;
+                return;
+              }
+              }
+            }
+
+            if(!encontrado){
+              JOptionPane.showMessageDialog(null,"MAP no encontrada!!!");
+            }
+          } catch (Exception e1) {
+            e1.printStackTrace();
+          }
+        } else{
+          JOptionPane.showMessageDialog(null,"No hay elementos en la base de datos");
+          
+        }
+  
+        element2.setText("");
+      });
 
   }
 }

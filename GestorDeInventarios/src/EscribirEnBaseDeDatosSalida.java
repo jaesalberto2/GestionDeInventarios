@@ -1,17 +1,14 @@
 
 import java.util.*;
-
-import javax.swing.JOptionPane;
-
 import java.io.*;
 
 
-public class EscribirEnBaseDeDatos {
+public class EscribirEnBaseDeDatosSalida {
 
 
-    public EscribirEnBaseDeDatos(String in)  {
+    public EscribirEnBaseDeDatosSalida(String in)  {
      String ruta="";
-     String nombre="GestorInventario.txt";
+     String nombre="GestorInventarioSalidas.txt";
      //String desc;
 
      File archivo=new File(ruta+nombre); 
@@ -21,20 +18,11 @@ public class EscribirEnBaseDeDatos {
            try (FileReader fr = new FileReader(archivo)) {
             BufferedReader br=new BufferedReader(fr);
             BufferedWriter bw=new BufferedWriter(new FileWriter(archivo,true));
-
-                //detectar si el elemento ya existe en la base de datos
-                String linea;
-                while((linea = br.readLine()) != null){
-                    if(linea.equals(in)){
-                        JOptionPane.showMessageDialog(null,"MAP ya existe en el inventario");
-                        return;
-                    }
-
-                }
+            //revisar que no este vacio
+            if (in != null) {
                 bw.write("\n"+in);
                 bw.flush();
-                JOptionPane.showMessageDialog(null,"Se ha agregado el MAP al inventario");
-                
+            }
         } catch (NumberFormatException | IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -43,8 +31,13 @@ public class EscribirEnBaseDeDatos {
         } else{
         try (FileWriter fw = new FileWriter(archivo)) {
             BufferedWriter bw=new BufferedWriter(fw);
-            bw.write(in);
-            bw.flush();
+            //revisar que no este vacio
+            if (in != null) {
+                bw.write("\n"+in);
+                bw.flush();
+                
+            }
+         
             //System.out.println("¿Qué compraste?");
                 //desc=sc.nextLine();
                 //bw.write(""+desc);
