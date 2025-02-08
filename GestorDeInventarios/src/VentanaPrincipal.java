@@ -51,6 +51,12 @@ public class VentanaPrincipal {
      consulta.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(consulta, Color.decode("#232323"), Color.decode("#2e2e2e"));
      panel.add(consulta);
+      consulta.addActionListener((ActionEvent e) -> {
+        VentanaConsultar consulta1 = new VentanaConsultar();
+      });
+
+     
+
 
      JButton inventario = new JButton("Inventario");
      inventario.setBounds(10, 168, 160, 28);

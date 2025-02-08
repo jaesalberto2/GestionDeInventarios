@@ -2,18 +2,18 @@ import javax.swing.*;
 import java.awt.Color;
 import helper_classes.*;
 
-public class VentanaRegistrarEntrada {
+public class VentanaConsultar {
 
-  public  VentanaRegistrarEntrada() {
+  public  VentanaConsultar() {
 
-     JFrame frame = new JFrame("Registrar Entrada de Material");
+     JFrame frame = new JFrame("Consultar Disponibilidad");
      frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
      frame.setSize(469, 254);
      JPanel panel = new JPanel();
      panel.setLayout(null);
      panel.setBackground(Color.decode("#1e1e1e"));
 
-     JButton Registrar = new JButton("Registrar MAP");
+     JButton Registrar = new JButton("Buscar MAP");
      Registrar.setBounds(180, 22, 106, 28);
      Registrar.setBackground(Color.decode("#2e2e2e"));
      Registrar.setForeground(Color.decode("#D9D9D9"));
