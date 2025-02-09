@@ -1,5 +1,4 @@
 
-import java.util.*;
 import java.io.*;
 
 
@@ -35,6 +34,7 @@ public class EscribirEnBaseDeDatosSalida {
             if (in != null) {
                 bw.write("\n"+in);
                 bw.flush();
+                bw.close();
                 
             }
          

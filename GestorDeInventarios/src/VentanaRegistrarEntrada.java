@@ -20,6 +20,8 @@ public class VentanaRegistrarEntrada {
      JPanel panel = new JPanel();
      panel.setLayout(null);
      panel.setBackground(Color.decode("#1e1e1e"));
+     frame.setIconImage(new ImageIcon(frame.getClass().getResource("/helper_classes/resources/fonts/logo.png")).getImage());
+
 
      JTextField element2 = new JTextField("");
      element2.setBounds(35, 100, 400, 21);
@@ -44,9 +46,6 @@ public class VentanaRegistrarEntrada {
      Registrar.addActionListener((ActionEvent e) -> {
       texto= ( element2.getText());
       EscribirEnBaseDeDatos escribir = new EscribirEnBaseDeDatos(texto);
-
-
-
       
       element2.setText("");
  

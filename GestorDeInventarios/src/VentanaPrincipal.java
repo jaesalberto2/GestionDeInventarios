@@ -2,7 +2,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.Color;
-import java.awt.Component;
 
 import helper_classes.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 //creamos un modelo de lista para la lista de inventario global
 
 
@@ -25,7 +25,6 @@ public class VentanaPrincipal {
   private JList<String> lista;
     private JTable tabla;
     private DefaultTableModel modelo; 
-    private String[] columnas = {"ID", "Nombre", "Cantidad", "Precio", "Descripción"};
 
      String ruta="";
      String nombre="GestorInventario.txt";
@@ -44,9 +43,16 @@ public class VentanaPrincipal {
      JFrame frame = new JFrame("Gestor de Inventarios PTS");
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      frame.setSize(1200, 1100);
+     frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+     frame.setIconImage(new ImageIcon(frame.getClass().getResource("/helper_classes/resources/fonts/logo.png")).getImage());
+
+     
+     
      JPanel panel = new JPanel();
      panel.setLayout(null);
      panel.setBackground(Color.decode("#1e1e1e"));
+     //logo de la ventana
+     
 
       //titulo de la tabla de inventario
       JLabel tituloInventario = new JLabel("Inventario");

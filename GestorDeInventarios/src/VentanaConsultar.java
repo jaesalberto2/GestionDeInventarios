@@ -22,6 +22,8 @@ public class VentanaConsultar {
      JPanel panel = new JPanel();
      panel.setLayout(null);
      panel.setBackground(Color.decode("#1e1e1e"));
+     frame.setIconImage(new ImageIcon(frame.getClass().getResource("/helper_classes/resources/fonts/logo.png")).getImage());
+
 
      JButton Registrar = new JButton("Buscar MAP");
      Registrar.setBounds(180, 22, 106, 28);
