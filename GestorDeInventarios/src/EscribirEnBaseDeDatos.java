@@ -3,6 +3,8 @@
 import javax.swing.JOptionPane;
 
 import java.io.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 
 public class EscribirEnBaseDeDatos {
@@ -11,7 +13,12 @@ public class EscribirEnBaseDeDatos {
     public EscribirEnBaseDeDatos(String in)  {
      String ruta="";
      String nombre="GestorInventario.txt";
+     //detectar fecha
+     Date todayDate = new Date(System.currentTimeMillis());
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+String fechaActual = sdf.format(todayDate);
      //String desc;
+
 
      File archivo=new File(ruta+nombre); 
 
@@ -26,7 +33,7 @@ public class EscribirEnBaseDeDatos {
                 //detectar si el elemento ya existe en la base de datos
                 String linea;
                 while((linea = br.readLine()) != null){
-                    if(linea.equals(in)){
+                    if(linea.contains(in)){
                         JOptionPane.showMessageDialog(null,"MAP ya existe en el inventario","Error",JOptionPane.ERROR_MESSAGE);
                         
                         return;
@@ -34,7 +41,7 @@ public class EscribirEnBaseDeDatos {
                     }
 
                 }
-                bw.write("\n"+in);
+                bw.write("\n"+in+"                  Entrada:"+fechaActual);
                 bw.flush();
                 JOptionPane.showMessageDialog(null,"Se ha agregado el MAP al inventario", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 bw.close();
@@ -46,7 +53,7 @@ public class EscribirEnBaseDeDatos {
         } else{
         try (FileWriter fw = new FileWriter(archivo)) {
             BufferedWriter bw=new BufferedWriter(fw);
-            bw.write(in);
+            bw.write(in+"                   Entrada:"+fechaActual);
             bw.flush();
             bw.close();
             //System.out.println("¿Qué compraste?");
