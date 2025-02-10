@@ -21,14 +21,14 @@ public class VentanaPrincipal {
   public static DefaultListModel<String> modeloListaSalidas = new DefaultListModel<String>();
 
   private JScrollPane scroll;
-  private JTextField inventario;
   private JList<String> lista;
-    private JTable tabla;
     private DefaultTableModel modelo; 
 
      String ruta="";
      String nombre="GestorInventario.txt";
       String nombre2="GestorInventarioSalidas.txt";
+      //textarea
+      
 
      //String desc;
 
@@ -71,6 +71,7 @@ public class VentanaPrincipal {
          try (FileReader fr = new FileReader(archivo);
               BufferedReader br = new BufferedReader(fr);
               BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true))) {
+                
 
             String line;
             while((line = br.readLine()) != null){
@@ -127,7 +128,7 @@ public class VentanaPrincipal {
 
 
 
-
+//Boton Registrar Entrada
      JButton registrar = new JButton("Registrar\n Entrada");
      registrar.setBounds(10, 34, 160, 57);
      registrar.setBackground(Color.decode("#2e2e2e"));
@@ -146,6 +147,7 @@ public class VentanaPrincipal {
     });
 
 
+    //Boton Consultar Disponibilidad
 
      JButton consulta = new JButton("Consultar\n Disponibilidad");
      consulta.setBounds(10, 100, 160, 57);
@@ -163,7 +165,7 @@ public class VentanaPrincipal {
       });
 
      
-
+//Boton Actualizar
 
      JButton actualizar = new JButton("Actualizar");
      actualizar.setBounds(10, 168, 160, 28);
@@ -205,7 +207,7 @@ public class VentanaPrincipal {
         });
 
 
-
+//Boton Registrar Salida
 
      JButton salida = new JButton("Registrar\n Salida");
      salida.setBounds(10, 206, 160, 57);
