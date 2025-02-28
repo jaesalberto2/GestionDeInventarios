@@ -36,6 +36,14 @@ public class VentanaPrincipal {
 
     
 
+  /**
+   * VentanaPrincipal is the main window for the Gestor de Inventarios PTS application.
+   * It initializes the main frame and its components, including inventory and output lists,
+   * and provides buttons for registering entries, consulting availability, updating lists,
+   * and registering outputs.
+   *
+   * @param args Command line arguments
+   */
   public VentanaPrincipal(String[] args) {
 
     
@@ -141,6 +149,7 @@ public class VentanaPrincipal {
      registrar.addActionListener((ActionEvent e) -> {
       @SuppressWarnings("unused")
       VentanaRegistrarEntrada registro = new VentanaRegistrarEntrada();
+            
       
 
       

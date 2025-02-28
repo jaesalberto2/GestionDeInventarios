@@ -1,4 +1,21 @@
 
+/**
+ * The EscribirEnBaseDeDatosSalida class is responsible for writing inventory exit data to a text file.
+ * It appends the provided input string along with the current date and time to the file "GestorInventarioSalidas.txt".
+ * If the file does not exist, it creates a new one.
+ * 
+ * <p>Usage example:</p>
+ * <pre>
+ * {@code
+ * EscribirEnBaseDeDatosSalida escribir = new EscribirEnBaseDeDatosSalida("Item description");
+ * }
+ * </pre>
+ * 
+ * @param in The input string to be written to the file, representing the inventory item description.
+ * 
+ * @throws NumberFormatException If an error occurs while parsing numbers.
+ * @throws IOException If an I/O error occurs while reading from or writing to the file.
+ */
 import java.io.*;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
