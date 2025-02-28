@@ -1,6 +1,14 @@
 import java.io.*;
 
 public class EliminarDeBaseDeDatos {
+    /**
+     * This class provides functionality to remove a specific line from a text file
+     * that acts as a database. It reads the original file, copies all lines except
+     * the specified one to a temporary file, and then replaces the original file
+     * with the temporary file.
+     *
+     * @param in The line to be removed from the database file.
+     */
     public EliminarDeBaseDeDatos(String in)  {
      String ruta="";
      String nombre="GestorInventario.txt";

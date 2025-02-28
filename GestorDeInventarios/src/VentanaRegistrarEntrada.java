@@ -9,6 +9,28 @@ import helper_classes.*;
 public class VentanaRegistrarEntrada {
  String texto = "";
 
+  /**
+   * VentanaRegistrarEntrada is a class that creates a GUI window for registering material entries.
+   * The window contains a text field for input and a button to submit the entry.
+   * The input is processed and written to a database upon clicking the button or pressing the Enter key.
+   * 
+   * Components:
+   * - JFrame: The main window frame.
+   * - JPanel: The panel that holds all the components.
+   * - JTextField: A text field for user input.
+   * - JButton: A button to submit the input.
+   * 
+   * Features:
+   * - Custom fonts and colors for UI components.
+   * - Rounded borders for text field and button.
+   * - Focus and click event handling for better user experience.
+   * - Action listener for the button to handle input submission.
+   * - Key listener for the text field to handle Enter key press for input submission.
+   * 
+   * Usage:
+   * Create an instance of VentanaRegistrarEntrada to display the window.
+   * The input text will be written to the database when the button is clicked or Enter key is pressed.
+   */
   public  VentanaRegistrarEntrada() {
 
     

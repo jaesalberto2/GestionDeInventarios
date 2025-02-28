@@ -1,5 +1,36 @@
 
 
+/**
+ * The EscribirEnBaseDeDatos class provides functionality to write data to a text file
+ * that acts as a simple database. It checks if the data already exists in the file
+ * before adding it, and appends a timestamp to each entry.
+ * 
+ * <p>This class uses the following libraries:
+ * <ul>
+ *   <li>javax.swing.JOptionPane for displaying messages to the user</li>
+ *   <li>java.io.* for file operations</li>
+ *   <li>java.sql.Date for handling date and time</li>
+ *   <li>java.text.SimpleDateFormat for formatting date and time</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>Usage example:
+ * <pre>
+ * {@code
+ * EscribirEnBaseDeDatos escribir = new EscribirEnBaseDeDatos("item1");
+ * }
+ * </pre>
+ * </p>
+ * 
+ * <p>Constructor:
+ * <ul>
+ *   <li>{@code EscribirEnBaseDeDatos(String in)}: Initializes the class with the input string
+ *       and writes it to the file if it does not already exist.</li>
+ * </ul>
+ * </p>
+ * 
+ * @param in The string to be written to the file.
+ */
 import javax.swing.JOptionPane;
 
 import java.io.*;

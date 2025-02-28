@@ -1,3 +1,29 @@
+/**
+ * VentanaConsultar class provides a GUI to search for MAP availability in the inventory.
+ * It reads from two files: "GestorInventario.txt" and "GestorInventarioSalidas.txt".
+ * If the MAP is found in either file, a message is displayed indicating its presence.
+ * If not found, a message indicating that the MAP is not found is displayed.
+ * 
+ * Components:
+ * - JFrame: Main window for the GUI.
+ * - JPanel: Container for the components.
+ * - JButton: Button to trigger the search action.
+ * - JTextField: Input field for the user to enter the MAP to search for.
+ * 
+ * Dependencies:
+ * - CustomFontLoader: Helper class to load custom fonts.
+ * - RoundedBorder: Helper class to create rounded borders for components.
+ * - OnClickEventHelper: Helper class to handle button click color changes.
+ * - OnFocusEventHelper: Helper class to handle text field focus events.
+ * 
+ * ActionListener:
+ * - The button "Registrar" triggers the search action.
+ * - It reads the input from the text field and searches for the MAP in the inventory and salidas files.
+ * - Displays appropriate messages based on the search results.
+ * 
+ * Constructor:
+ * - Initializes the GUI components and sets up the action listener for the search button.
+ */
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
