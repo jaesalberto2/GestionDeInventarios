@@ -53,6 +53,7 @@ hjhkjhj
 4568784
 hjhkjhj
 <<<<<<< HEAD
+<<<<<<< HEAD
 457878
 1454654
 kbhjkjhghkgjhhkgkjhghj
@@ -83,6 +84,9 @@ ghkjhgjghjgkjgh						Entrada:2025/02/09 17:33:13                  Salida:2025/02
 468                  Salida:2025/02/10 16:32:16
 gfhgj                  Salida:2025/02/10 16:32:19
 hgfhgffghfhjgfhfhff                  Entrada:2025/02/19 07:20:17                  Salida:2025/02/19 07:20:31
+=======
+457878
+>>>>>>> parent of ef39c0a (mejorar notas)
 =======
 457878
 >>>>>>> parent of ef39c0a (mejorar notas)

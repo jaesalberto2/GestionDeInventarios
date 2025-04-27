@@ -24,6 +24,7 @@ kjhlkjglkjhjk
 1454654
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 54654654465465       Entrada:2025/02/09 13:04:06
@@ -45,6 +46,9 @@ ghjfhg                  Entrada:2025/02/09 18:11:20
 
 hjggkgjhg                  Entrada:2025/02/10 16:32:04
 
+=======
+kbhjkjhghkgjhhkgkjhghj
+>>>>>>> parent of ef39c0a (mejorar notas)
 =======
 kbhjkjhghkgjhhkgkjhghj
 >>>>>>> parent of ef39c0a (mejorar notas)
