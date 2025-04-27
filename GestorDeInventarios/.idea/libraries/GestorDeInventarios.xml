@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GestorDeInventarios">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/GestorDeInventarios.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
