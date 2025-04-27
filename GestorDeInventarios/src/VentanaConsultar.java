@@ -83,9 +83,7 @@ public class VentanaConsultar {
             String linea;
             boolean encontrado = false;
             while((linea = br.readLine()) != null){
-              //buscar en la base de datos de inventario omitiendo la fecha
-
-            if(linea.contains(texto)){
+              if(linea.equals(texto)){
                 JOptionPane.showMessageDialog(null,"La MAP se encuentra en Inventario");
                 encontrado = true;
                 return;
@@ -97,7 +95,7 @@ public class VentanaConsultar {
               BufferedReader br2 = new BufferedReader(fr2);
               String linea2;
               while((linea2 = br2.readLine()) != null){
-              if(linea2.contains(texto)){
+              if(linea2.equals(texto)){
                 JOptionPane.showMessageDialog(null,"La MAP se encuentra en Salidas");
                 encontrado = true;
                 return;
