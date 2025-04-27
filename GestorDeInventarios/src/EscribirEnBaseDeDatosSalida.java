@@ -17,10 +17,13 @@
  * @throws IOException If an I/O error occurs while reading from or writing to the file.
  */
 import java.io.*;
+<<<<<<< HEAD
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 
+=======
+>>>>>>> parent of ef39c0a (mejorar notas)
 
 
 public class EscribirEnBaseDeDatosSalida {
@@ -29,16 +32,7 @@ public class EscribirEnBaseDeDatosSalida {
     public EscribirEnBaseDeDatosSalida(String in)  {
      String ruta="";
      String nombre="GestorInventarioSalidas.txt";
-
-     
-
-
-     Date todayDate = new Date(System.currentTimeMillis());
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-String fechaActual = sdf.format(todayDate);
      //String desc;
-
-
 
      File archivo=new File(ruta+nombre); 
 
@@ -49,7 +43,7 @@ String fechaActual = sdf.format(todayDate);
             BufferedWriter bw=new BufferedWriter(new FileWriter(archivo,true));
             //revisar que no este vacio
             if (in != null) {
-                bw.write("\n"+in+"                  Salida:"+fechaActual);
+                bw.write("\n"+in);
                 bw.flush();
             }
         } catch (NumberFormatException | IOException e) {
@@ -62,7 +56,7 @@ String fechaActual = sdf.format(todayDate);
             BufferedWriter bw=new BufferedWriter(fw);
             //revisar que no este vacio
             if (in != null) {
-                bw.write("\n"+in+"                  Salida:"+fechaActual);
+                bw.write("\n"+in);
                 bw.flush();
                 bw.close();
                 
